@@ -1,0 +1,210 @@
+		print("File is nil")
+
+end
+
+TO_JSON
+M
+vim.api.nvim_out_write("Clipboard monitoring plugin loaded.\n")
+
+
+open_list
+nvim
+p
+r
+d
+function open_list()
+  -- Create a new buffer
+  local buf = vim.api.nvim_create_buf(false, true)
+
+  -- Create a new window with the buffer
+  local win = vim.api.nvim_open_win(buf, true, {relative='editor', width=40, height=10, col=0, row=0})
+
+  -- Set some text for the buffer
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, {"Item 1", "Item 2", "Item 3"})
+
+  -- Map 'j' to go down
+  vim.api.nvim_buf_set_keymap(buf, 'n', 'j', ':lua vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1] + 1, 0})<CR>', {noremap = true, silent = true})
+
+  -- Map 'k' to go up
+  vim.api.nvim_buf_set_keymap(buf, 'n', 'k', ':lua vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1] - 1, 0})<CR>', {noremap = true, silent = true})
+
+  -- Map 'h' to go left
+  vim.api.nvim_buf_set_keymap(buf, 'n', 'h', ':lua vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1], vim.api.nvim_win_get_cursor(0)[2] - 1})<CR>', {noremap = true, silent = true})
+
+  -- Map 'l' to go right
+  vim.api.nvim_buf_set_keymap(buf, 'n', 'l', ':lua vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1], vim.api.nvim_win_get_cursor(0)[2] + 1})<CR>', {noremap = true, silent = true})
+end
+
+-- Then map <leader>b to call this function
+vim.api.nvim_set_keymap("n", "<leader>b", ":lua open_list()<CR>", { noremap = true, silent = true })
+
+Open_list
+vim.api.nvim_set_keymap("n", "<leader>b", ":lua open_list()<CR>", { noremap = true, silent = true })
+
+open_list
+open_list
+open_list
+function Open_clipboard_list()
+	-- Create a new buffer
+	local buf = vim.api.nvim_create_buf(false, true)
+
+	-- Create a new window with the buffer
+	local win = vim.api.nvim_open_win(buf, true, { relative = "editor", width = 40, height = 10, col = 0, row = 0 })
+
+	-- Set some text for the buffer
+	vim.api.nvim_buf_set_lines(buf, 0, -1, false, { "Item 1", "Item 2", "Item 3" })
+
+	-- Map 'j' to go down
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"j",
+		":lua vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1] + 1, 0})<CR>",
+		{ noremap = true, silent = true }
+	)
+
+	-- Map 'k' to go up
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"k",
+		":lua vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1] - 1, 0})<CR>",
+		{ noremap = true, silent = true }
+	)
+
+	-- Map 'h' to go left
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"h",
+		":lua vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1], vim.api.nvim_win_get_cursor(0)[2] - 1})<CR>",
+		{ noremap = true, silent = true }
+	)
+
+	-- Map 'l' to go right
+	vim.api.nvim_buf_set_keymap(
+		buf,
+		"n",
+		"l",
+		":lua vim.api.nvim_win_set_cursor(0, {vim.api.nvim_win_get_cursor(0)[1], vim.api.nvim_win_get_cursor(0)[2] + 1})<CR>",
+		{ noremap = true, silent = true }
+	)
+end
+
+-- Then map <leader>b to call this function
+vim.api.nvim_set_keymap("n", "<leader>b", ":lua Open_clipboard_list()<CR>", { noremap = true, silent = true })
+
+function M.show_list(items)
+
+function M.show_list(items)
+  -- Create a new buffer
+  local buf = vim.api.nvim_create_buf(false, true)
+
+  -- Populate the buffer
+  vim.api.nvim_buf_set_lines(buf, 0, -1, true, items)
+
+  -- Create a floating window
+  local options = {
+    relative = 'cursor',
+    width = 20,
+    height = #items + 2,
+    border = 'single',
+  }
+  local win = vim.api.nvim_open_win(buf, true, options)
+
+  -- Set up keymaps for navigation and selection
+  vim.keymap.set('n', '<up>', function()
+    vim.cmd('norm k')
+  end, { buffer = buf })
+  vim.keymap.set('n', '<down>', function()
+    vim.cmd('norm j')
+  end, { buffer = buf })
+  vim.keymap.set('n', '<esc>', function()
+    vim.cmd('close')
+  end, { buffer = buf })
+  vim.keymap.set('n', '<cr>', function()
+    local selected_item = vim.api.nvim_buf_get_lines(buf, vim.api.nvim_win_get_cursor(win)[1] - 1, vim.api.nvim_win_get_cursor(win)[1] - 1, true)[1]
+    -- Do something with the selected item
+    print(selected_item)
+    vim.cmd('close')
+  end, { buffer = buf })
+end
+vim.keymap.set('n', '<leader>b', function()
+  require('your_plugin').show_list(your_list)
+end)
+your_plugin
+your_plugin
+",
+0
+0
+0
+0
+local win = vim.api.nvim_get_current_win()
+  local win_width = vim.api.nvim_win_get_width(win)
+  local win_height = vim.api.nvim_win_get_height(win)
+
+  local new_win_width = 80 -- Adjust as needed
+  local new_win_height = 20 -- Adjust as needed
+
+  local row = math.floor(win_height / 2 - new_win_height / 2)
+  local col = math.floor(win_width / 2 - new_win_width / 2)
+
+  local options = {
+    relative = 'win',
+    width = new_win_width,
+    height = new_win_height,
+    row = row,
+    col = col,
+    border = 'single',
+  }
+
+win
+win
+M.open_list = function()
+	-- Create a new empty buffer
+	local buf = vim.api.nvim_create_buf(false, true)
+
+	-- vim.api.nvim_buf_set_name(buf, "clipboard")
+
+	-- Add some lines to the buffer
+	vim.api.nvim_buf_set_lines(
+		buf,
+		0,
+		-1,
+		false,
+		{ "Item 1 from clipboard", "Item 2 from clipboard", "Item 3 from clipboard" }
+	)
+
+	-- Open the buffer in a new window
+	vim.api.nvim_open_win(buf, true, { relative = "editor", width = 30, height = 10, col = 10, row = 10 })
+end
+
+M.open_list = function()
+	-- Create a new empty buffer
+	local buf = vim.api.nvim_create_buf(false, true)
+
+	-- vim.api.nvim_buf_set_name(buf, "clipboard")
+
+	-- Add some lines to the buffer
+	vim.api.nvim_buf_set_lines(
+		buf,
+		0,
+		-1,
+		false,
+		{ "Item 1 from clipboard", "Item 2 from clipboard", "Item 3 from clipboard" }
+	)
+
+	-- Open the buffer in a new window
+	vim.api.nvim_open_win(buf, true, { relative = "editor", width = 30, height = 10, col = 10, row = 10 })
+end
+
+	-- Create a floating window
+	-- local options = {
+	-- 	relative = "cursor",
+	-- 	row = 0,
+	-- 	col = 0,
+	-- 	width = 40,
+	-- 	height = #items + 2,
+	-- 	border = "single",
+	-- }
+
