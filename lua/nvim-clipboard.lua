@@ -4,18 +4,18 @@ M.clipboard_history = {}
 local vim = vim
 local last_clipboard_content = "" -- Variable to store the last clipboard content
 
+-- clear items of extra newline elements causing error
+local function remove_newlines(str_table)
+	local result = {}
+	for i, str in ipairs(str_table) do
+		result[i] = str:gsub("\n", "")
+	end
+	return result
+end
+
 function M.show_list(items)
 	-- Create a new buffer
 	local buf = vim.api.nvim_create_buf(false, true)
-
-	-- clear items of extra newline elements causing error
-	local function remove_newlines(str_table)
-		local result = {}
-		for i, str in ipairs(str_table) do
-			result[i] = str:gsub("\n", "")
-		end
-		return result
-	end
 
 	-- Populate the buffer
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, remove_newlines(items))
@@ -91,9 +91,9 @@ end
 
 -- setup mapping for clipboard buffer to be opened
 vim.keymap.set("n", "<leader>b", function()
-	-- local list = M.read_from_file()
-	-- print("List when leader b is pressed: ", list)
-	require("nvim-clipboard").show_list(M.clipboard_history)
+	local list = M.read_from_file()
+	require("nvim-clipboard").show_list(list)
+	-- require("nvim-clipboard").show_list(M.clipboard_history)
 end)
 -- Define a function to monitor clipboard changes
 M.monitor_clipboard = function()

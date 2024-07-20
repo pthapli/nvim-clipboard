@@ -1,442 +1,46 @@
 
-local your_list = { "hello", "mister", "dj", "mera" }
-
-	local list = M.read_from_file()
-
-list
-list
-local vim = vim
-
--- Define a function to monitor clipboard changes
-
-local function handle_newlines(items)
-  local new_items = {}
-  for _, item in pairs(items) do
-    local lines = string.split(item, '\n')
-    for _, line in pairs(lines) do
-      table.insert(new_items, line)
-    end
-  end
-  return new_items
-end
-items
-items
-string
-string
-local function handle_newlines(items)
-	local new_items = {}
-	for _, item in pairs(items) do
-		local lines = item.split(item, "\n")
-		for _, line in pairs(lines) do
-			table.insert(new_items, line)
-		end
-	end
-	return new_items
-end
-
-(
-)
-)
-vim.keymap.set("n", "<leader>b", function()
-
-function remove_newlines(str_table)
-  local result = {}
-  for i, str in ipairs(str_table) do
-    result[i] = str:gsub("\n", "")
-  end
-  return result
-end
-loacl	
-items
-items
-local vim = vim
-
-return M
-
-		table.insert(M.clipboard_history, clipboard_text)
-
-Defines a function
-function remove_newlines(str_table)
-function remove_newlines(str_table)
-  local result = {}
-  for i, str in ipairs(str_table) do
-    result[i] = str:gsub("\n", "")
-  end
-  return result
-end
-function remove_newlines(str_table)  local result = {}  for i, str in ipairs(str_table) do    result[i] = str:gsub("\n", "")  end  return resultend
-
-Defines a function
-
-Defines a function
-
-r
-r
-I want to get the correct 
-
-I want to get the correct 
-
-I want to get the correct 
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		vim.cmd("norm j")
-
-		vim.cmd("norm j")
-
-		vim.cmd("norm j")
-
 	end, { buffer = buf })
 
 	end, { buffer = buf })
 
-	end, { buffer = buf })
 
-	if file ~= nil then
-
-	if file ~= nil then
-
-	if file ~= nil then
-
-		file:close()
-
-		file:close()
-
-		file:close()
-
-		file:close()
-
-v
-v
-v
-v
-How 
-
-How 
-
-How 
-
-How 
-
-true
-true
-true
-true
-true
-		)[1]
-
-		)[1]
-
-		)[1]
-
-		)[1]
-
-		)[1]
-
-  --   print("start and end " .. start .. " " .. end)
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-  --   print("start and end " .. start .. " " .. end)
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-  --   print("start and end " .. start .. " " .. end)
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-  --   print("start and end " .. start .. " " .. end)
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-  --   print("start and end " .. start .. " " .. end)
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		--
-
-		--
-
-		--
-
-		--
-
-		--
-
-    start = vim.api.nvim_win_get_cursor(curr)
-
-    start = vim.api.nvim_win_get_cursor(curr)
-
-    start = vim.api.nvim_win_get_cursor(curr)
-
-    start = vim.api.nvim_win_get_cursor(curr)
-
-    start = vim.api.nvim_win_get_cursor(curr)
-
-win
-win
-win
-win
-win
-current_win
-current_win
-current_win
-current_win
-current_win
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-		-- local start = vim.api.nvim_win_get_cursor(win)[1] -1
-		--   local end = vim.api.nvim_win_get_cursor(win)[1] +1
-		--
-		--   print("start and end " .. start .. " " .. end)
-    
-
-		-- local start = vim.api.nvim_win_get_cursor(win)[1] -1
-		--   local end = vim.api.nvim_win_get_cursor(win)[1] +1
-		--
-		--   print("start and end " .. start .. " " .. end)
-    
-
-		-- local start = vim.api.nvim_win_get_cursor(win)[1] -1
-		--   local end = vim.api.nvim_win_get_cursor(win)[1] +1
-		--
-		--   print("start and end " .. start .. " " .. end)
-    
-
-		-- local start = vim.api.nvim_win_get_cursor(win)[1] -1
-		--   local end = vim.api.nvim_win_get_cursor(win)[1] +1
-		--
-		--   print("start and end " .. start .. " " .. end)
-    
-
-		-- local start = vim.api.nvim_win_get_cursor(win)[1] -1
-		--   local end = vim.api.nvim_win_get_cursor(win)[1] +1
-		--
-		--   print("start and end " .. start .. " " .. end)
-    
-
- 
- 
- 
- 
- 
-    starts
-
-    starts
-
-    starts
-
-    starts
-
-    starts
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-
-
-
-
-
-
-
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-,
-,
-,
-,
-,
-,
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-		local selected_item = vim.api.nvim_buf_get_lines(
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-
-win
-win
-win
-win
-win
-win
-win
-win
-win
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("Calling the method ")
-
-		print("bero q: " .. q)
-
-		print("bero q: " .. q)
-
-		print("bero q: " .. q)
-
-		print("bero q: " .. q)
-
-		print("bero q: " .. q)
-
-		print("bero q: " .. q)
-
-		print("bero q: " .. q)
-
-		print("bero q: " .. q)
-
-		print("bero q: " .. q)
-
-line
-line
-line
-line
-line
-line
-line
-line
-line
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-		print("File is nil")
-
-		local p = vim.api.nvim_win_get_cursor(win)[1] - 1
-		local q = vim.api.nvim_win_get_cursor(win)[1] + 1
-		print("bero p: " .. p)
-		print("bero q: " .. q)
-
-		print("Calling the method ")
-
-		print("This is the line: ")
-
-		local line = vim.api.nvim_buf_get_lines(buf, line_number, line_number + 1, false)[1]
-
-		local line_number = vim.api.nvim_win_get_cursor(0)[1] - 1
-
-		local line_number = vim.api.nvim_win_get_cursor(0)[1] - 1
 
 local last_clipboard_content = "" -- Variable to store the last clipboard content
 
-function M.show_list(items)
+local function remove_newlines(str_table)
 
-FT2420090JJQ
-		print("This is the BERO " .. selected_item)
-
-    --
-
-	end, { buffer = buf })
-
-	if file ~= nil then
-
-	end
-
-local function get_reg(char)
-	return vim.api.nvim_exec([[echo getreg(']]..char..[[')]], true):gsub("[\n\r]", "^J")
 end
-		vim.fn.setreg("+", selected_item)
 
-		vim.fn.setreg("+", selected_item)
 
+
+vim.api.nvim_out_write("Clipboard monitoring plugin loaded.\n")
+
+v
+	local options = {
+		relative = "win",
+		width = new_win_width,
+		height = new_win_height,
+		row = row,
+		col = col,
 		border = "single",
+	}
 
 		row = row,
+		row = row,
 
-		width = new_win_width,
+\
+`
+\
+`
+\
+“
+The Selection Registers: `“* and “+`
 
-		border = "single",
-		border = "single",
+### Working
 
-	local win = vim.api.nvim_open_win(buf, true, options)
-
-	vim.keymap.set("n", "<down>", function()
-
-	end, { buffer = buf })
-
-		width = new_win_width,
-		width = new_win_width,
-
-string
-Register Names: You
-	vim.keymap.set("n", "<down>", function()
-local function get_reg(char)
-	return vim.api.nvim_exec([[echo getreg(']] .. char .. [[')]], true):gsub("[\n\r]", "^J")
-end
+ 
+x
+a 
+to 
+s
+- 
