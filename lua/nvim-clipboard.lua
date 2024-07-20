@@ -8,8 +8,17 @@ function M.show_list(items)
 	-- Create a new buffer
 	local buf = vim.api.nvim_create_buf(false, true)
 
+	-- clear items of extra newline elements causing error
+	local function remove_newlines(str_table)
+		local result = {}
+		for i, str in ipairs(str_table) do
+			result[i] = str:gsub("\n", "")
+		end
+		return result
+	end
+
 	-- Populate the buffer
-	vim.api.nvim_buf_set_lines(buf, 0, -1, true, items)
+	vim.api.nvim_buf_set_lines(buf, 0, -1, false, remove_newlines(items))
 
 	local current_win = vim.api.nvim_get_current_win()
 	local win_width = vim.api.nvim_win_get_width(current_win)
@@ -42,15 +51,17 @@ function M.show_list(items)
 	vim.keymap.set("n", "<esc>", function()
 		vim.cmd("close")
 	end, { buffer = buf })
-	vim.keymap.set("n", "<cr>", function()
+
+	vim.keymap.set("n", "<CR>", function()
 		local selected_item = vim.api.nvim_buf_get_lines(
 			buf,
 			vim.api.nvim_win_get_cursor(win)[1] - 1,
-			vim.api.nvim_win_get_cursor(win)[1] - 1,
-			true
+			vim.api.nvim_win_get_cursor(win)[1] + 1,
+			false
 		)[1]
-		-- Do something with the selected item
-		print(selected_item)
+		-- move selected_item to + register
+		vim.fn.setreg("+", selected_item)
+		vim.fn.setreg("*", selected_item)
 		vim.cmd("close")
 	end, { buffer = buf })
 end
@@ -58,28 +69,31 @@ end
 local function write_to_file(text)
 	local file = io.open("clipboard.txt", "a")
 	if file ~= nil then
-		file:write(text .. "\n")
+		file:write("\n" .. text)
 		file:close()
 	else
 		print("File is nil")
 	end
 end
 
-local function read_from_file()
+function M.read_from_file()
 	local file = io.open("clipboard.txt", "r")
 	if file ~= nil then
 		for line in file:lines() do
 			table.insert(M.clipboard_history, line)
 		end
 		file:close()
+		return M.clipboard_history
 	else
 		print("File is nil")
 	end
 end
 
-local your_list = { "hello", "mister", "dj", "mera" }
+-- setup mapping for clipboard buffer to be opened
 vim.keymap.set("n", "<leader>b", function()
-	require("nvim-clipboard").show_list(your_list)
+	-- local list = M.read_from_file()
+	-- print("List when leader b is pressed: ", list)
+	require("nvim-clipboard").show_list(M.clipboard_history)
 end)
 -- Define a function to monitor clipboard changes
 M.monitor_clipboard = function()
